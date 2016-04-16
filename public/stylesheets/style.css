@@ -109,7 +109,7 @@ input[type=email]:focus
 .details
 {
   position: relative;
-  top:20px;
+  margin-top: 5%;
 }
 .details .col
 {
@@ -124,7 +124,7 @@ input[type=email]:focus
 }
 .personal-details .col
 {
-  margin-top: 5%;
+  margin-top: 20px;
 }
 .heading
 {
@@ -164,7 +164,7 @@ input[type=email]:focus
 /*HIstory*/
 .history
 {
-  margin-top: 20px;
+  margin-top: 5%;
 }
 .history-search
 {
@@ -233,7 +233,7 @@ input[type=email]:focus
 }
 .history-timeline-row
 {
-  margin-top: 20px;
+  margin-top: 5%;
 }
 .history-timeline
 {
@@ -325,7 +325,7 @@ input[type=email]:focus
 }
 .prescription
 {
-  margin-top: 20px;
+  margin-top: 5%;
 }
 
 /*Media Queries for Font*/

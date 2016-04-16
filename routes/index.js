@@ -11,6 +11,7 @@ var mongodb;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(express.static("public" ));
 
 mongoClient.connect(url,function(err,db){
   mongodb = db;
@@ -22,25 +23,31 @@ app.use(function(req,res,next){
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  var collection = mongodb.collection("userCollection");
-  collection.find().toArray(function(err,data){
-    res.json(data);
+  mongoClient.connect(url,function(err,db){
+    var collection = db.collection("userCollection");
+    collection.find().toArray(function(err,data){
+      res.render('index');
+    });
+    //res.json({message: 'Home Page'});
   });
-  //res.json({message: 'Home Page'});
 });
 
 router.post('/', function(req, res, next) {
-  var collection = mongodb.collection("userCollection");
-  collection.find().toArray(function(err,data){
-    res.json(data);
+  mongoClient.connect(url,function(err,db){
+    var collection = db.collection("userCollection");
+    collection.find().toArray(function(err,data){
+      res.render('index');
+    });
+    //res.json({message: 'Home Page'});
   });
-  //res.json({message: 'Home Page'});
 });
 
 router.post('/register',function(req,res){
   mongoClient.connect(url,function(err,db){
     var collection = db.collection("userCollection");
       bcrypt.hash(req.body.name, 2, function(err, hash){
+
+        //Generate 6 Digit Unique Id based on hashed name
         var str=""+hash;
         var genId="",count=0;
         for(var i=0;i<=str.length;i++){
@@ -65,7 +72,14 @@ router.post('/register',function(req,res){
           if(err){
             console.log(err);
           } else{
-              res.redirect('/');
+            var sendData = {
+              name: data.name,
+              id: data.id,
+              phone: data.phone,
+              age: data.age,
+              address: data.address
+            };
+              res.render('register',sendData);
           }
         });
       });
@@ -81,13 +95,23 @@ router.post('/addHistory',function(req,res){
       doctor: req.body.doctor,
       time: req.body.time,
       ailment: req.body.ailment,
-      prescription: req.body.prescription
+      prescription: req.body.prescription,
     };
     collection.updateOne({"id": req.body.id},{$push: {'history': data}},function(err,d){
       if(err){
         console.log(err);
       } else{
-        res.redirect('/');
+        collection.findOne({"id": req.body.id},function(err,data){
+          if(err){
+            console.log(err);
+            throw err;
+          }
+          var sendData = {
+            name: data.name,
+            history: data.history
+          };
+          res.render('history',sendData);
+        });
       }
     });
   });
@@ -111,7 +135,7 @@ router.post('/details',function(req,res){
           address: data.address
         };
         console.log(data);
-        res.json(sendData);
+        res.render('details',sendData);
       });
     }
   });
@@ -120,10 +144,15 @@ router.post('/details',function(req,res){
 router.post('/history',function(req,res){
   mongoClient.connect(url,function(err,db){
     db.collection('userCollection').findOne({'id': req.body.id},function(err,data){
+      if(err){
+        console.log(err);
+        throw err;
+      }
       var sendData = {
+        name: data.name,
         history: data.history
       };
-      res.json(sendData);
+      res.render('history',sendData);
     });
   });
 });
