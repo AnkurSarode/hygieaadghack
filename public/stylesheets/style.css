@@ -28,6 +28,16 @@ input[type=text]:focus
   border-bottom: 1px solid #ea5f5f  !important;
   box-shadow: 0 1px 0 0 #ea5f5f !important;
 }
+input[type=text]
+{
+  border-bottom: 1px solid white  !important;
+  box-shadow: 0 1px 0 0 #ea5f5f !important;
+}
+textarea
+{
+  border: 0.5px solid white  !important;
+  box-shadow: 0 1px 0 0 #ea5f5f !important;
+}
 input[type=email]:focus
 {
   border-bottom: 1px solid #ea5f5f  !important;
@@ -191,7 +201,7 @@ input[type=email]:focus
 .history-img
 {
   margin-top: 50%;
-  height:200px;
+  height:150px;
   width: auto;
 }
 .history-searchbar
@@ -263,8 +273,9 @@ input[type=email]:focus
   border-right: 2px solid #ea5f5f;
   position: relative;
   padding-top: 5%;
-  background: white;
+  background: #303030;
   z-index: 2;
+  color: white;
 }
 
 .history-timeline-margin
@@ -282,9 +293,10 @@ input[type=email]:focus
 .history-timeline .timeline-data
 {
   border-bottom: 2px solid #ea5f5f;
-  border-left: 2px solid #ea5f5f;
-  color: black;
+
+  color: white;
   padding: 5px;
+
 }
 .history-timeline-name
 {
@@ -334,63 +346,8 @@ input[type=email]:focus
 /**/
 /**/
 /**/
-@media(min-width:1400px)
-{
-  .input-group label
-  {
-    font-size: 150%;
-  }
-  p
-  {
-    font-size: 150%;
-  }
-  .input-group input
-  {
-    font-size: 150%;
-  }
-  .input-group button
-  {
-    font-size: 150%;
-  }
-  .input-group textarea
-  {
-    font-size: 150%;
-  }
-  .prescription a
-  {
-    font-size: 150%;
-  }
-  .heading h3
-  {
-    font-size: 350%;
-  }
-  .top-bar-item
-  {
-    font-size: 130%;
-    padding-top: 1%;
-  }
-  nav .col ul a
-  {
-    font-size: 140%;
-  }
-  .history-timeline .collapsible-header
-  {
-    padding: 6%;
-    font-size: 150%;
-  }
-  .history-timeline .collapsible-body
-  {
-    font-size: 150%;
-  }
-  .history-timeline-name h6
-  {
-    font-size: 160%;
-  }
-  #timeline-container-force-position
-  {
-    font-size: 200%;
-  }
-}
+
+
 
 /* prescription text upload*/
 .prescription-text-holder
@@ -431,6 +388,9 @@ input[type=email]:focus
   box-shadow: 0 1px 0 0 white !important;
   color: white;
   transition: all 0.3s;
+}
+.prescription-text-holder .input-group{
+  height: 80px;
 }
 .prescription-text .input-group button
 {
@@ -474,6 +434,9 @@ input[type=email]:focus
 {
   color: white;
 }
+.prescription-ocr-holder .prescription-ocr-text .input-group input[type=file]{
+  display: none;
+}
 #prescription-dropdown a
 {
   color: black;
@@ -496,7 +459,7 @@ header:after, #timeline .timeline-item:after, header:before, #timeline .timeline
 
 .prescription-details h1, .prescription-details  h2, .prescription-details  h3, .prescription-details  h4 {
   font-family: "Roboto", arial, tahoma, verdana;
-  font-size: 200%;
+  font-size: 150%;
 }
 
 .project-name {
@@ -597,6 +560,10 @@ header .social .btn {
   -ms-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+#timeline .timeline-item .timeline-content p{
+  font-size: 200%;
+  color: #565656;
+}
 #timeline .timeline-item .timeline-content h2 {
   padding: 15px;
   background: #ea5f5f;
@@ -687,7 +654,9 @@ header .social .btn {
   }
 }
 /* illustration*/
-
+.illustration
+{
+}
 .illustration-row-1
 {
   background: rgb(227,73,73);
@@ -697,6 +666,18 @@ header .social .btn {
 {
   width: 100%;
   margin-top: 5%;
+}
+.illustration-img-1
+{
+  padding-top: 10%;
+}
+.illustration-img-2
+{
+  width: 70%;
+}
+.illustration-row-2
+{
+  margin-left: 10%;
 }
 .illustration-text
 {
@@ -721,4 +702,137 @@ header .social .btn {
   background: rgb(237,77,77);
   margin: 0;
   padding-bottom: 6%;
+}
+.illustration-img{
+  animation-duration: 2s;
+}
+/* Media Queries */
+@media(min-width:1400px)
+{
+  .input-group label
+  {
+    font-size: 130%;
+  }
+  p
+  {
+    font-size: 130%;
+  }
+  .input-group input
+  {
+    font-size: 130%;
+  }
+  .input-group button
+  {
+    font-size: 130%;
+  }
+  .input-group textarea
+  {
+    font-size: 130%;
+  }
+  .prescription a
+  {
+    font-size: 130%;
+  }
+  .heading h3
+  {
+    font-size: 350%;
+  }
+  .top-bar-item
+  {
+    font-size: 130%;
+    padding-top: 1%;
+  }
+  nav .col ul a
+  {
+    font-size: 140%;
+  }
+  .history-timeline .collapsible-header
+  {
+    padding: 6%;
+    font-size: 150%;
+  }
+  .history-timeline .collapsible-body
+  {
+    font-size: 150%;
+  }
+  .history-timeline-name h6
+  {
+    font-size: 160%;
+  }
+}
+
+@media(max-width:700px)
+{
+  .input-group label
+  {
+    font-size: 80%;
+  }
+  p
+  {
+    font-size: 80%;
+  }
+  .input-group input
+  {
+    font-size: 80%;
+  }
+  .input-group button
+  {
+    font-size: 80%;
+  }
+  .input-group textarea
+  {
+    font-size: 80%;
+  }
+  .prescription a
+  {
+    font-size: 80%;
+  }
+  .heading h3
+  {
+    font-size: 280%;
+  }
+  .top-bar-item
+  {
+    display: none;
+    font-size: 70%;
+    padding-top: 1%;
+  }
+  .top-bar-row-hover
+  {
+    display: none;
+  }
+  .top-bar-row
+  {
+    display: none;
+  }
+  nav .col ul a
+  {
+    font-size: 70%;
+  }
+  .history-timeline .collapsible-header
+  {
+    padding: 6%;
+    font-size: 80%;
+  }
+  .history-timeline .collapsible-body
+  {
+    font-size: 80%;
+  }
+  .history-timeline-name h6
+  {
+    font-size: 90%;
+  }
+  .illustration .illustration-text h4
+  {
+    font-size: 80%;
+    width: 100%;
+  }
+  .illustration-img, .illustration-text
+  {
+    margin-top: 10%;
+  }
+  .modal
+  {
+
+  }
 }

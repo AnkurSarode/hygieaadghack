@@ -23,15 +23,15 @@
     <nav class="z-depth-0">
       <div class="nav-wrapper row">
         <div class="col s12 m10 l10 push-m1 push-l1">
-          <a href="#!" class="brand-logo heading"><h4><b>Hygiea</b></h4></a>
+          <a href="#!" class="brand-logo heading"><h4><b>Santé</b></h4></a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li><a href="#" id="signup-modal-trigger">Register</a></li>
           </ul>
         </div>
         <ul class="side-nav" id="mobile-demo">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
+        <li><a href="#" id="signin-modal-trigger-m">Personal Details</a></li>
+        <li><a href="#">Prescriptions</a></li>
         <li><a href="collapsible.html">Javascript</a></li>
         <li><a href="mobile.html">Mobile</a></li>
         </ul>
@@ -83,14 +83,14 @@
     </div>
     <div class="col s7 m7 l7">
       <div class="illustration-1-holder">
-          <img class="illustration-img" src="/img/home-1.jpg">
+          <img class="illustration-img illustration-img-1" src="/img/home-1.jpg">
       </div>
     </div>
   </div>
   <div class="row illustration-row-2">
     <div class="col s7 m7 l7">
       <div class="illustration-2-holder">
-          <img class="illustration-img" src="/img/home-2.jpg">
+          <img class="illustration-img illustration-img-2" src="/img/home-2.jpg">
       </div>
     </div>
     <div class="col s5 m5 l5">
@@ -107,7 +107,7 @@
     </div>
     <div class="col s7 m7 l7">
       <div class="illustration-3-holder">
-          <img class="illustration-img" src="/img/home-3.jpg">
+          <img class="illustration-img illustration-img-3" src="/img/home-3.jpg">
       </div>
     </div>
   </div>
@@ -271,7 +271,7 @@
               </div>
             </div>
             <div class="col s0 m2 l2 push-m2 push-l2">
-              <img src="/img/prescription.jpg" class="prescription-img"><br>
+              <img src="/img/prescription.png" class="prescription-img"><br>
                <a href="#" class="waves-effect waves-red lignten-3 btn-flat submit-btn" id="upload">UPLOAD</a>
             </div>
         </div>
@@ -486,7 +486,7 @@
           <div class="timeline-item">
             <div class="timeline-icon">
               <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
+            width="11px" height="10px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
       </svg>
             </div>
             <div class="timeline-content">
@@ -505,7 +505,7 @@
 <div class="prescription-text-holder">
   <div class="row">
     <div class="col s12 m8 l8 push-l2 push-m2">
-      <div class="prescription-text-header white-heading heading z-depth-1">
+      <div class="prescription-text-header white-heading heading z-depth-2">
         <h4>Upload Prescription</h4>
       </div>
       <div class="prescription-text row">
@@ -521,19 +521,19 @@
           </div>
           <div class="input-group">
             <label for="Morning-Med">Morning Medicines</label>
-            <textarea name="morning" placeholder="" class=""></textarea>
+            <input name="morning" type="text" placeholder="" class=""></input>
           </div>
           <div class="input-group">
             <label for="Afternoon-Med">Afternoon Medicines</label>
-            <textarea type="text" name="noon" placeholder="" class=""></textarea>
+            <input type="text" name="noon" placeholder="" class=""></input>
           </div>
           <div class="input-group ">
             <label for="Eve_Med">Evening Medicines</label>
-            <textarea type="text" name="evening" placeholder="" class=""></textarea>
+            <input type="text" name="evening" placeholder="" class=""></input>
           </div>
           <div class="input-group">
             <label for="Night_Med">Night Medicines</label>
-            <textarea type="text" name="night" placeholder="" class=""></textarea>
+            <input type="text" name="night" placeholder="" class=""></input>
           </div>
           <br>
           <div class="input-group right">
@@ -566,18 +566,12 @@
                 <input type="text" name="id" placeholder="" class="">
               </div>
               <div class="ocr-upload-image input-group">
-                <img src="/img/prescription.jpg">
+                <label for="img"><img style="border-radius: 5px;margin-right: 1px;" src="/img/prescription.png"></label>
+                <input type="file" id="img" name="img" class="submit-btn waves-effect waves-red lignten-3 btn-flat">
               </div>
             </div>
           </div>
           <br>
-          <div class="row">
-            <div class="col s10 m4 l4 push-l4 push-m4">
-            <div class="input-group ocr-input">
-              <input type="file" name="ocr" class="submit-btn waves-effect waves-red lignten-3 btn-flat">
-            </div>
-            </div>
-          </div>
           <div class="row">
             <div class="col s12 m10 l10 push-m1 push-l1">
               <div class="input-group right">
@@ -588,6 +582,14 @@
           </form>
           <br><br>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="row">
+      <div class="col s10 m10 l10 push-l1 push-m1 push-s1">
+
       </div>
     </div>
   </div>

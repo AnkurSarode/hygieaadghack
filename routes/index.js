@@ -89,6 +89,7 @@ router.post('/register',function(req,res){
 });
 
 router.post('/addHistory',function(req,res){
+  
   mongoClient.connect(url,function(err,db){
     var collection = db.collection('userCollection');
     var data = {
@@ -97,7 +98,7 @@ router.post('/addHistory',function(req,res){
       doctor: req.body.doctor,
       time: req.body.time,
       ailment: req.body.ailment,
-      prescription: req.body.prescription,
+      prescription: req.body.prescription
     };
     collection.updateOne({"id": req.body.id},{$push: {'history': data}},function(err,d){
       if(err){

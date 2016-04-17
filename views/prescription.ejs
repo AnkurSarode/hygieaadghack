@@ -23,7 +23,7 @@
     <nav class="z-depth-0">
       <div class="nav-wrapper row">
         <div class="col s12 m10 l10 push-m1 push-l1">
-          <a href="#!" class="brand-logo heading"><h4><b>Hygiea</b></h4></a>
+          <a href="#!" class="brand-logo heading"><h4><b>Santé</b></h4></a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li><a href="#" id="signup-modal-trigger">Register</a></li>
@@ -231,7 +231,7 @@
               </div>
             </div>
             <div class="col s0 m2 l2 push-m2 push-l2">
-              <img src="/img/prescription.jpg" class="prescription-img"><br>
+              <img src="/img/prescription.png" class="prescription-img"><br>
                <a href="#" class="waves-effect waves-red lignten-3 btn-flat submit-btn" id="upload">UPLOAD</a>
             </div>
         </div>
@@ -441,13 +441,13 @@
 <div class="row">
   <div class="col s10 m8 l8 push-s1 push-m2 push-l2">
       <div class="container prescription-details">
-      <%if(name!=undefined){%>
+      <%if(name!=undefined && name.length>0){%>
         <div class="heading"><h1 style="font-family: Great Vibes; font-size: 400%;"><%=name%>'s Prescription</h1></div>
         <div id="timeline">
           <div class="timeline-item">
             <div class="timeline-icon">
               <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
+            width="11px" height="10px" viewBox="0 0 11 10" enable-background="new 0 0 11 10" xml:space="preserve">
       </svg>
             </div>
             <div class="timeline-content">
@@ -460,7 +460,7 @@
           <div class="timeline-item">
             <div class="timeline-icon">
               <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
+            width="11px" height="10px" viewBox="0 0 11 10" enable-background="new 0 0 11 10" xml:space="preserve">
       </svg>
             </div>
             <div class="timeline-content right">
@@ -473,7 +473,7 @@
           <div class="timeline-item">
             <div class="timeline-icon">
               <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
+            width="11px" height="10px" viewBox="0 0 11 10" enable-background="new 0 0 11 10" xml:space="preserve">
       </svg>
             </div>
             <div class="timeline-content left">
@@ -486,7 +486,7 @@
           <div class="timeline-item">
             <div class="timeline-icon">
               <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
+            width="11px" height="10px" viewBox="0 0 11 10" enable-background="new 0 0 11 10" xml:space="preserve">
       </svg>
             </div>
             <div class="timeline-content right">
@@ -502,6 +502,16 @@
           <div class="undefined-prescription">
             <div class="white-heading heading"><h3 style="font-family: Great Vibes">No Current Prescriptions</h3></div>
             <div class=""></div>
+          </div>
+        <%}%>
+        <%if(name.length==0){%>
+          <div class="undefined-prescription">
+            <div class="white-heading heading" style="padding-bottom:5%;"><h3 style="font-family: Roboto;font-size: 200%; color:#5f5f5f;">Please Enter Valid Data
+              <form action="http://localhost:3000/" method="get">
+                <button type="submit" style="color: black;background: #ea5f5f;font-family: Roboto;font-size: 15px; margin-right:1%;" class="right submit-btn waves-effect waves-red lighten-3 btn-flat" value="Back">Back</button>
+              </form></h3>
+
+            </div>
           </div>
         <%}%>
       </div>
@@ -527,19 +537,19 @@
           </div>
           <div class="input-group">
             <label for="Morning-Med">Morning Medicines</label>
-            <textarea name="morning" placeholder="" class=""></textarea>
+            <input name="morning" placeholder="" class=""></input>
           </div>
           <div class="input-group">
             <label for="Afternoon-Med">Afternoon Medicines</label>
-            <textarea type="text" name="noon" placeholder="" class=""></textarea>
+            <input type="text" name="noon" placeholder="" class=""></input>
           </div>
           <div class="input-group ">
             <label for="Eve_Med">Evening Medicines</label>
-            <textarea type="text" name="evening" placeholder="" class=""></textarea>
+            <input type="text" name="evening" placeholder="" class=""></input>
           </div>
           <div class="input-group">
             <label for="Night_Med">Night Medicines</label>
-            <textarea type="text" name="night" placeholder="" class=""></textarea>
+            <input type="text" name="night" placeholder="" class=""></input>
           </div>
           <br>
           <div class="input-group right">
@@ -572,18 +582,12 @@
                 <input type="text" name="id" placeholder="" class="">
               </div>
               <div class="ocr-upload-image input-group">
-                <img src="/img/prescription.jpg">
+                <label for="img"><img style="border-radius: 5px;margin-right: 1px;" src="/img/prescription.png"></label>
+                <input type="file" id="img" name="img" class="submit-btn waves-effect waves-red lignten-3 btn-flat">
               </div>
             </div>
           </div>
           <br>
-          <div class="row">
-            <div class="col s10 m4 l4 push-l4 push-m4">
-            <div class="input-group ocr-input">
-              <input type="file" name="ocr" class="submit-btn waves-effect waves-red lignten-3 btn-flat">
-            </div>
-            </div>
-          </div>
           <div class="row">
             <div class="col s12 m10 l10 push-m1 push-l1">
               <div class="input-group right">
