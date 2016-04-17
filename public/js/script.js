@@ -158,48 +158,7 @@ $(".details").hide();
     $(".prescription-ocr-holder").show();
     $(".prescription-ocr-holder").addClass("animated slideInDown");
   });
-  /*timeline*/
-  /**/
-  /**/
-  $('#timeline-container-force-position').timelineMe({
-  items: [
-    {
-      type: 'smallItem',
-      label: '8am ',
-      shortContent: 'short description 1',
-      fullContent: 'This is a test to see if the data overflows the div when we test it for largr amount of adata',
-      showMore: 'more',
-      showLess: 'less'
-    },
-    {
-      type: 'smallItem',
-      label: '12pm',
-      shortContent: 'short description 2',
-      fullContent: 'big description 2',
-      showMore: 'more',
-      showLess: 'less'
-    },
-    {
-      type: 'smallItem',
-      label: '6pm',
-      shortContent: 'short description 3',
-      fullContent: 'big description 3',
-      showMore: 'more',
-      showLess: 'less',
-      forcePosition: 'right'
-    },
-    {
-      type: 'smallItem',
-      label: '9pm',
-      shortContent: 'short description 4',
-      fullContent: 'big description 4',
-      showMore: 'more',
-      showLess: 'less',
-      forcePosition: 'left'
-    }
-  ]
-  });
-
+  $('.illustration-row-1').css('height',Ht-(Ht/20));
 });
 
 $(window).resize(function()
@@ -213,4 +172,5 @@ $(window).resize(function()
   $(".history-search").css("height",history_ht*1.5);
   $(".history-timeline").css("height",history_ht*2);
   $(".red-timeline").css("height",history_ht*2-100);
+  $('.illustration-row-1').css('height',Ht-(Ht/20));
 });

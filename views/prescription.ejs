@@ -442,7 +442,7 @@
   <div class="col s10 m8 l8 push-s1 push-m2 push-l2">
       <div class="container prescription-details">
       <%if(name!=undefined){%>
-        <h1 class="project-name"><%=name%>'s Prescription</h1>
+        <div class="heading"><h1 style="font-family: Great Vibes; font-size: 400%;"><%=name%>'s Prescription</h1></div>
         <div id="timeline">
           <div class="timeline-item">
             <div class="timeline-icon">
@@ -453,8 +453,7 @@
             <div class="timeline-content">
               <h2>Morning - 8am</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Atque, facilis quo maiores magnam modi ab libero praesentium blanditiis.
+                <%=morning%>
               </p>
             </div>
           </div>
@@ -465,10 +464,9 @@
       </svg>
             </div>
             <div class="timeline-content right">
-              <h2>LOREM IPSUM DOLOR</h2>
+              <h2>Afternoon - 12pm</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Atque, facilis quo maiores magnam modi ab libero praesentium blanditiis.
+                <%=noon%>
               </p>
             </div>
           </div>
@@ -478,11 +476,10 @@
             width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
       </svg>
             </div>
-            <div class="timeline-content ">
-              <h2>LOREM IPSUM DOLOR</h2>
+            <div class="timeline-content left">
+              <h2>Evening - 4pm</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Atque, facilis quo maiores magnam modi ab libero praesentium blanditiis.
+                <%=evening%>
               </p>
             </div>
           </div>
@@ -493,10 +490,9 @@
       </svg>
             </div>
             <div class="timeline-content right">
-              <h2>LOREM IPSUM DOLOR</h2>
+              <h2>Night - 8pm</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Atque, facilis quo maiores magnam modi ab libero praesentium blanditiis.
+                <%=night%>
               </p>
             </div>
           </div>

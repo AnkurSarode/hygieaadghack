@@ -352,6 +352,10 @@ input[type=email]:focus
   {
     font-size: 150%;
   }
+  .input-group textarea
+  {
+    font-size: 150%;
+  }
   .prescription a
   {
     font-size: 150%;
@@ -418,12 +422,14 @@ input[type=email]:focus
 .prescription-text textarea
 {
   margin-top: 1%;
+  color: white;
 }
 .prescription-text textarea:focus
 {
   outline: none !important;
   border: 1px solid white !important;
   box-shadow: 0 1px 0 0 white !important;
+  color: white;
   transition: all 0.3s;
 }
 .prescription-text .input-group button
@@ -475,27 +481,56 @@ input[type=email]:focus
 
 
 /*Prescription Timeline*/
-.prescription-details img {
-  max-width: 100%;
+@import "http://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700";
+header:after, #timeline .timeline-item:after, header:before, #timeline .timeline-item:before {
+  content: '';
+  display: block;
+  width: 100%;
+  clear: both;
 }
-
 
 .container {
   max-width: 1100px;
   margin: 0 auto;
 }
 
-.prescription-details h1, .prescription-details h2, .prescription-details h3, .prescription-details h4 {
+.prescription-details h1, .prescription-details  h2, .prescription-details  h3, .prescription-details  h4 {
   font-family: "Roboto", arial, tahoma, verdana;
   font-size: 200%;
 }
 
-.prescription-details .project-name {
+.project-name {
   text-align: center;
   padding: 10px 0;
 }
 
-
+header {
+  background: #2b2e48;
+  padding: 10px;
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
+  -ms-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
+}
+header .logo {
+  color: #ea5f5f;
+  float: left;
+  font-family: "Roboto", arial, tahoma, verdana;
+  font-size: 22px;
+  font-weight: 500;
+}
+header .logo > span {
+  color: #f6b9b9;
+  font-weight: 300;
+}
+header .social {
+  float: right;
+}
+header .social .btn {
+  font-family: "Roboto";
+  font-size: 14px;
+  margin: 10px 5px;
+}
 
 #timeline {
   width: 100%;
@@ -595,7 +630,7 @@ input[type=email]:focus
   border-right: 7px solid #ea5f5f;
 }
 
-.prescription-details .btn {
+.btn {
   padding: 5px 15px;
   text-decoration: none;
   background: transparent;
@@ -618,7 +653,7 @@ input[type=email]:focus
   -ms-box-shadow: 2px 2px 0 #f08c8c;
   box-shadow: 2px 2px 0 #f08c8c;
 }
-.prescription-details .btn:hover {
+.btn:hover {
   box-shadow: none;
   top: 2px;
   left: 2px;
@@ -650,4 +685,40 @@ input[type=email]:focus
   #timeline .timeline-item .timeline-icon {
     left: 0;
   }
+}
+/* illustration*/
+
+.illustration-row-1
+{
+  background: rgb(227,73,73);
+  margin: 0;
+}
+.illustration-img
+{
+  width: 100%;
+  margin-top: 5%;
+}
+.illustration-text
+{
+  color: white;
+  padding-top: 30%;
+  padding-left: 20%;
+}
+.illustration-text-2
+{
+  color: white;
+  padding-top: 50%;
+  padding-left: 0%;
+  padding-right: 2%;
+}
+.illustration-row-2
+{
+  background: rgb(48,48,48);
+  margin:0;
+}
+.illustration-row-3
+{
+  background: rgb(237,77,77);
+  margin: 0;
+  padding-bottom: 6%;
 }

@@ -167,12 +167,12 @@ router.post('/prescription',function(req,res){
         throw err;
       } else{
         var sendData = {
-          name: req.body.name,
-          id: req.body.id,
-          morning: req.body.morning,
-          noon: req.body.noon,
-          evening: req.body.evening,
-          night: req.body.night
+          name: data.name,
+          id: data.id,
+          morning: data.morning,
+          noon: data.noon,
+          evening: data.evening,
+          night: data.night
         };
         console.log(sendData);
         res.render('prescription',sendData);
@@ -192,7 +192,8 @@ router.post('/addPrescription',function(req,res){
       evening: req.body.evening,
       night: req.body.night
     };
-    collection.updateOne({'id': req.body.id},{$set: data},function(err,da){
+    console.log('Insert Data\n'+data);
+    collection.insertOne(data,function(err,da){
       if(err){
         console.log(err);
         throw err;
