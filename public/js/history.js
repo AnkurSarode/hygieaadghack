@@ -9,6 +9,11 @@ $(document).ready(function(){
   {
     $("#signin-modal").openModal();
   });
+
+  $('#prescription-view-trigger').on("click",function(){
+    $('#prescription-view-modal').openModal();
+  });
+  
   $(".button-collapse").sideNav();
   $('#history-get-trigger').on("click",function(){
       $('#history-timeline-modal').openModal();
@@ -54,6 +59,10 @@ $(".red-timeline").css("height",history_ht*2-100);
     $(".history-timeline-row").removeClass("animated slideInDown");
     $(".prescription").hide();
     $(".prescription").removeClass("animated slideInDown");
+    $('.prescription-text-holder').hide();
+    $('.prescription-text-holder').removeClass('animated slideInDown');
+    $('.prescription-ocr-holder').hide();
+    $('.prescription-ocr-holder').removeClass('animated slideInDown');
     $(".details").show();
     $(".details").addClass("animated slideInDown");
   });*/
@@ -76,6 +85,10 @@ $(".red-timeline").css("height",history_ht*2-100);
     $(".history-timeline-row").removeClass("animated slideInDown");
     $(".prescription").hide();
     $(".prescription").removeClass("animated slideInDown");
+    $('.prescription-text-holder').hide();
+    $('.prescription-text-holder').removeClass('animated slideInDown');
+    $('.prescription-ocr-holder').hide();
+    $('.prescription-ocr-holder').removeClass('animated slideInDown');
     $(".history").show();
     $(".history").addClass("animated slideInDown");
   });
@@ -102,8 +115,46 @@ $(".red-timeline").css("height",history_ht*2-100);
     $(".history").removeClass("animated slideInDown");
     $(".history-timeline-row").hide();
     $(".history-timeline-row").removeClass("animated slideInDown");
+    $('.prescription-text-holder').hide();
+    $('.prescription-text-holder').removeClass('animated slideInDown');
+    $('.prescription-ocr-holder').hide();
+    $('.prescription-ocr-holder').removeClass('animated slideInDown');
     $(".prescription").show();
     $(".prescription").addClass("animated slideInDown");
+  });
+  /*prescription*/
+  $(".prescription-text-holder").hide();
+  $("#prescription-text-trigger").on("click",function()
+  {
+    $(".details").hide();
+    $(".details").removeClass("animated slideInDown");
+    $(".history").hide();
+    $(".history").removeClass("animated slideInDown");
+    $(".history-timeline-row").hide();
+    $(".history-timeline-row").removeClass("animated slideInDown");
+    $(".prescription").hide();
+    $(".prescription").removeClass("animated slideInDown");
+    $(".prescription-ocr-holder").hide();
+    $(".prescription-ocr-holder").removeClass("animated slideInDown");
+    $(".prescription-text-holder").show();
+    $(".prescription-text-holder").addClass("animated slideInDown");
+  });
+
+  $(".prescription-ocr-holder").hide();
+  $("#prescription-ocr-trigger").on("click",function()
+  {
+    $(".details").hide();
+    $(".details").removeClass("animated slideInDown");
+    $(".history").hide();
+    $(".history").removeClass("animated slideInDown");
+    $(".history-timeline-row").hide();
+    $(".history-timeline-row").removeClass("animated slideInDown");
+    $(".prescription").hide();
+    $(".prescription").removeClass("animated slideInDown");
+    $(".prescription-text-holder").hide();
+    $(".prescription-text-holder").removeClass("animated slideInDown");
+    $(".prescription-ocr-holder").show();
+    $(".prescription-ocr-holder").addClass("animated slideInDown");
   });
   /*timeline*/
   /**/

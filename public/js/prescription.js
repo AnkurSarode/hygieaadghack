@@ -1,5 +1,9 @@
 $(document).ready(function(){
 
+  $(".prescription").show();
+  $(".prescription").addClass("animated slideInDown");
+
+
   var Ht=$(window).height();
   var Wt=$(window).width();
   $("#signup-modal-trigger").on("click",function()
@@ -11,13 +15,13 @@ $(document).ready(function(){
     $("#signin-modal").openModal();
   });
   $(".button-collapse").sideNav();
-  $('#history-get-trigger').on("click",function(){
-      $('#history-timeline-modal').openModal();
-    });
 
-    $('#prescription-view-trigger').on("click",function(){
-      $('#prescription-view-modal').openModal();
-    });
+  $('#history-get-trigger').on("click",function(){
+    $('#history-timeline-modal').openModal();
+  });
+  $('#prescription-view-trigger').on("click",function(){
+    $('#prescription-view-modal').openModal();
+  });
 
   $('.collapsible').collapsible({
     accordion : false
@@ -50,7 +54,7 @@ $(".history-timeline").css("height",history_ht*2);
 $(".red-timeline").css("height",history_ht*2-100);
 
 
-//$(".details").hide();
+$(".details").hide();
   /*$("#details-trigger").on("click",function()
   {
     $(".history").hide();
@@ -66,8 +70,6 @@ $(".red-timeline").css("height",history_ht*2-100);
     $(".details").show();
     $(".details").addClass("animated slideInDown");
   });*/
-  $('.details').show();
-  $('.details').addClass('animated slideInDown');
 
   $(".history-timeline .collapsible-header").on("click",function()
   {
@@ -94,7 +96,7 @@ $(".red-timeline").css("height",history_ht*2-100);
   });
 
   $(".history-timeline-row").hide();
-  $("#history-get-trigger").on("click",function()
+  /*$("#history-get-trigger").on("click",function()
   {
     $(".details").hide();
     $(".details").removeClass("animated slideInDown");
@@ -108,9 +110,9 @@ $(".red-timeline").css("height",history_ht*2-100);
     $('.prescription-ocr-holder').removeClass('animated slideInDown');
     $(".history-timeline-row").show();
     $(".history-timeline-row").addClass("animated slideInDown");
-  });
+  });*/
 
-  $(".prescription").hide();
+  /*$(".prescription").hide();
   $("#prescription-trigger").on("click",function()
   {
     $(".details").hide();
@@ -125,7 +127,7 @@ $(".red-timeline").css("height",history_ht*2-100);
     $('.prescription-ocr-holder').removeClass('animated slideInDown');
     $(".prescription").show();
     $(".prescription").addClass("animated slideInDown");
-  });
+  });*/
   /*prescription*/
   $(".prescription-text-holder").hide();
   $("#prescription-text-trigger").on("click",function()
@@ -201,6 +203,7 @@ $(".red-timeline").css("height",history_ht*2-100);
     }
   ]
   });
+  $('.heading').css('font-family','Great Vibes');
 
 });
 

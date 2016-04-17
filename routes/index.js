@@ -4,6 +4,7 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 var mongo = require('mongodb');
 var bcrypt = require('bcrypt');
+var requestify = require('requestify');
 var mongoClient = mongo.MongoClient;
 var url = "mongodb://Vishwajeet:310toyuma@ds030829.mlab.com:30829/hackathon";
 var mongodb;
@@ -23,13 +24,14 @@ app.use(function(req,res,next){
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  mongoClient.connect(url,function(err,db){
+  /*mongoClient.connect(url,function(err,db){
     var collection = db.collection("userCollection");
     collection.find().toArray(function(err,data){
       res.render('index');
     });
     //res.json({message: 'Home Page'});
-  });
+  });*/
+  res.render('index');
 });
 
 router.post('/', function(req, res, next) {
@@ -156,5 +158,61 @@ router.post('/history',function(req,res){
     });
   });
 });
+
+router.post('/prescription',function(req,res){
+  mongoClient.connect(url,function(err,db){
+    var collection = db.collection('presCollection');
+    collection.findOne({'id': req.body.id},function(err,data){
+      if(err){
+        throw err;
+      } else{
+        var sendData = {
+          name: req.body.name,
+          id: req.body.id,
+          morning: req.body.morning,
+          noon: req.body.noon,
+          evening: req.body.evening,
+          night: req.body.night
+        };
+        console.log(sendData);
+        res.render('prescription',sendData);
+      }
+    });
+  });
+});
+
+router.post('/addPrescription',function(req,res){
+  mongoClient.connect(url,function(err,db){
+    var collection = db.collection('presCollection');
+    var data = {
+      name: req.body.name,
+      id: req.body.id,
+      morning: req.body.morning,
+      noon: req.body.noon,
+      evening: req.body.evening,
+      night: req.body.night
+    };
+    collection.updateOne({'id': req.body.id},{$set: data},function(err,da){
+      if(err){
+        console.log(err);
+        throw err;
+      } else{
+        res.render('prescription',data);
+      }
+    });
+  });
+});
+
+app.post('/ocr', function (req, res) {
+  requestify.post('http://example.com', {
+        'img': req.body.img
+    })
+    .then(function(response) {
+        // Get the response body
+        var data = response.getBody();
+        console.log(data);
+    });
+});
+
 
 module.exports = router;
