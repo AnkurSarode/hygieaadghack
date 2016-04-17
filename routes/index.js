@@ -89,7 +89,7 @@ router.post('/register',function(req,res){
 });
 
 router.post('/addHistory',function(req,res){
-  
+
   mongoClient.connect(url,function(err,db){
     var collection = db.collection('userCollection');
     var data = {
@@ -129,7 +129,9 @@ router.post('/details',function(req,res){
         if(err){
           console.log(err);
           throw err;
-        }
+        } if(data==null){
+          return;
+        } else{
         var sendData = {
           name: data.name,
           id: data.id,
@@ -139,6 +141,7 @@ router.post('/details',function(req,res){
         };
         console.log(data);
         res.render('details',sendData);
+        }
       });
     }
   });

@@ -50,7 +50,7 @@ $(document).ready(function(){
 var details_ht=Ht/1.3;
 $(".personal-details").css("height",details_ht);
 var history_ht=Ht/1.4;
-$(".history-search").css("height",history_ht*1.5);
+$(".history-search").css("height",history_ht*1.6);
 $(".history-timeline").css("height",history_ht*2);
 $(".red-timeline").css("height",history_ht*2-100);
 
@@ -192,7 +192,7 @@ $(window).resize(function()
   var details_ht=Ht/1.3;
   $(".personal-details").css("height",details_ht);
   var history_ht=Ht/1.4;
-  $(".history-search").css("height",history_ht*1.5);
+  $(".history-search").css("height",history_ht*1.6);
   $(".history-timeline").css("height",history_ht*2);
   $(".red-timeline").css("height",history_ht*2-100);
 

@@ -2,7 +2,7 @@
 body
 {
   background: #303030;
-  font-family: 'Roboto';
+  font-family: 'Lato'!important;
 }
 nav
 {
@@ -273,9 +273,9 @@ input[type=email]:focus
   border-right: 2px solid #ea5f5f;
   position: relative;
   padding-top: 5%;
-  background: #303030;
+  background: #fff;
   z-index: 2;
-  color: white;
+  color: #5f5f5f;
 }
 
 .history-timeline-margin
@@ -294,7 +294,7 @@ input[type=email]:focus
 {
   border-bottom: 2px solid #ea5f5f;
 
-  color: white;
+  color: #5f5f5f;
   padding: 5px;
 
 }
@@ -835,4 +835,11 @@ header .social .btn {
   {
 
   }
+}
+body form label{
+  font-family: 'Lato';
+}
+body form input
+{
+  font-family: 'Lato';
 }
